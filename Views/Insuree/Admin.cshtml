@@ -1,0 +1,104 @@
+﻿@model IEnumerable<CarInsurance.Models.Insurance>
+
+@{
+    ViewBag.Title = "Admin";
+
+}
+
+<h2>Admin</h2>
+<p>
+    <div>
+        <span style="float:left"> @Html.ActionLink("Client Page", "Index") </span>
+        <span style="float:right"> @Html.ActionLink("Reload Admin Page", "Admin")</span>
+    </div>
+</p>
+
+<table class="table">
+    <tr>
+        <th></th>
+        <th><b>
+            @Html.DisplayNameFor(model => model.Quote)
+        </b></th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuoteDate)
+        </th>
+        <th><b>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </b></th>
+        <th><b>
+            @Html.DisplayNameFor(model => model.LastName)
+        </b></th>
+        <b><th>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </b></th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarMake)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarModel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DUI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SpeedingTickets)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Get_Full_All_Reason_Coverage)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+            <td><b>
+                @Html.DisplayFor(modelItem => item.Quote)
+            </b></td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuoteDate)
+            </td>
+            <td><b>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </b></td>
+            <td><b>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </b></td>
+            <td><b>
+                @Html.DisplayFor(modelItem => item.EmailAddress)
+            </b></td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarMake)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarModel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DUI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpeedingTickets)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Get_Full_All_Reason_Coverage)
+            </td>
+        </tr>
+    }
+
+</table>
